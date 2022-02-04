@@ -11,6 +11,14 @@ files:
   auspice_config: "africa_cdc_profile/auspice_config_africa.json"
   description: "africa_cdc_profile/description_africa.md"
 
+# Retain as many strains as possible to improve representation of all countries
+# in builds, at the expense of some phylogenetic accuracy.
+filter:
+  skip_diagnostics: true
+
+tree:
+  tree-builder-args: "'-ninit 10 -n 4 -czb'"
+
 # Define builds.
 builds:
   # Define regional builds.
