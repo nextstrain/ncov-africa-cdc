@@ -290,20 +290,22 @@ builds:
 # Define subsampling for country and regional builds.
 subsampling:
   african_country:
-    # Use all GISAID Africa data to sample the given country evenly by year and month.
+    # Use GISAID Africa data to sample the given country.
     focal:
-      max_sequences: 6000
+      max_sequences: 4000
       query: --query "(gisaid_africa == 'yes') & (country == '{country}')"
     # Use all contextual data from the nextregions input without any subsampling.
     context:
-      query: --query "(nextregions_africa == 'yes')"
+      max_sequences: 1000
+      query: --query "(nextregions_africa == 'yes') & (country != '{country}')"
 
   african_region:
     # Sample each region evenly by country, year, and month.
     focal:
       group_by: country year month
-      max_sequences: 6000
+      max_sequences: 4000
       query: --query "(gisaid_africa == 'yes') & (country in [{countries}])"
     # Use all contextual data from the nextregions input without any subsampling.
     context:
-      query: --query "(nextregions_africa == 'yes')"
+      max_sequences: 1000
+      query: --query "(nextregions_africa == 'yes') & (country not in [{countries}])"
