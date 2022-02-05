@@ -8,9 +8,9 @@ Build configuration for Africa CDC SARS-CoV-2 builds hosted at https://nextstrai
 
 Login to [GISAID (gisaid.org)](https://www.gisaid.org/) and select the “EpiCoV” link from the navigation.
 
-Select the “Downloads” link from the EpiCoV navigation bar. Select the “Africa” button. Save the file as `hcov_africa.tar.gz` in the `ncov/data/` workflow directory.
+Select the “Downloads” link from the EpiCoV navigation bar. Scroll to the “Genomic epidemiology” section and select the “nextregions” button. Select the “Africa” button. Save the file as `hcov_africa.tar.gz` in the `ncov/data/` workflow directory.
 
-Select the “Downloads” link from the EpiCoV navigation bar. Find the “Download packages” section and select the “FASTA” button. Save the full GISAID sequences as `data/sequences_fasta.tar.xz`.
+Click "Back" to return to the main "Download" dialog, find the “Download packages” section, and select the “FASTA” button. Save the full GISAID sequences as `data/sequences_fasta.tar.xz`.
 
 Select the “metadata” button from that same “Download packages” section and download the corresponding file as `data/metadata_tsv.tar.xz`.
 
