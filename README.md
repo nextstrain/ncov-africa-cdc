@@ -52,7 +52,7 @@ tar xzOf data/sequences_fasta.tar.xz sequences.fasta \
 Navigate to the `ncov` workflow directory; these instructions assume this is a sibling directory to this repository.
 By default, the following command will run builds for all countries and regions.
 
-``` bash
+```bash
 nextstrain build \
   --cpus 4 \
   --memory 8Gib \
@@ -63,7 +63,7 @@ nextstrain build \
 You can specify a comma-delimited subset of builds to run by build name.
 The following example only runs builds for Ghana and Kenya.
 
-``` bash
+```bash
 nextstrain build \
   --cpus 4 \
   --memory 8Gib \
@@ -77,7 +77,7 @@ nextstrain build \
 To run builds on AWS Batch, the build config and profiles directory must be in the `ncov` workflow directory.
 Sync those files into `ncov`.
 
-``` bash
+```bash
 # Run from ncov/
 rsync -arvz \
   ../ncov-africa-cdc/builds_africa.yaml \
@@ -87,7 +87,7 @@ rsync -arvz \
 
 Run all builds on AWS Batch.
 
-``` bash
+```bash
 nextstrain build \
   --aws-batch \
   --cpus 36 \
