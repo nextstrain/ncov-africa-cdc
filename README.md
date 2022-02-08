@@ -29,15 +29,22 @@ Extract African metadata and sequences from full GISAID downloads.
 
 ```
 # Get metadata for Africa directly from tarball.
-tar xzOf data/metadata_tsv.tar.xz metadata.tsv | tsv-filter -H --str-in-fld Location:Africa | gzip -c > data/metadata_africa.tsv.gz
+tar xzOf data/metadata_tsv.tar.xz metadata.tsv \
+  | tsv-filter -H --str-in-fld Location:Africa \
+  | xz -c -2 > data/metadata_africa.tsv.xz
 
 # Get strain names for genomes.
 # GISAID uses virus name, collection date, and submission date
 # delimited by a pipe character.
-gzip -c -d data/metadata_africa.tsv.gz | tsv-select -H -f 'Virus\ name','Collection\ date','Submission\ date' | sed 1d | sed 's/\t/|/g' > data/strains_africa.txt
+xz -c -d data/metadata_africa.tsv.xz \
+  | tsv-select -H -f 'Virus\ name','Collection\ date','Submission\ date' \
+  | sed 1d \
+  | sed 's/\t/|/g' > data/strains_africa.txt
 
 # Get genomes for strain names from tarball.
-tar xzOf data/sequences_fasta.tar.xz sequences.fasta | faSomeRecords /dev/stdin data/strains_africa.txt /dev/stdout | gzip -c > data/sequences_africa.fasta.gz
+tar xzOf data/sequences_fasta.tar.xz sequences.fasta \
+  | faSomeRecords /dev/stdin data/strains_africa.txt /dev/stdout \
+  | xz -c -2 > data/sequences_africa.fasta.xz
 ```
 
 ### Run builds locally
