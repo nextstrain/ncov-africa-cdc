@@ -4,6 +4,15 @@ Build configuration for Africa CDC SARS-CoV-2 builds hosted at https://nextstrai
 
 ## Instructions for running Africa CDC builds with GISAID data
 
+### Setup Repositories
+
+```
+git clone https://github.com/nextstrain/ncov-africa-cdc.git
+git clone https://github.com/nextstrain/ncov.git
+cd ncov
+cp -r ../ncov-africa-cdc/africa_cdc_profile .
+```
+
 ### Download data
 
 Login to [GISAID (gisaid.org)](https://www.gisaid.org/) and select the “EpiCoV” link from the navigation.
