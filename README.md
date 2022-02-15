@@ -10,7 +10,7 @@ Build configuration for Africa CDC SARS-CoV-2 builds hosted at https://nextstrai
 git clone https://github.com/nextstrain/ncov-africa-cdc.git
 git clone https://github.com/nextstrain/ncov.git
 cd ncov
-ln -s ../ncov-africa-cdc/africa_cdc_profile .
+cp -r ../ncov-africa-cdc/africa_cdc_profile .
 ```
 
 ### Download data
