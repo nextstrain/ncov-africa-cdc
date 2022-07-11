@@ -15,6 +15,7 @@ files:
 # in builds, at the expense of some phylogenetic accuracy.
 filter:
   skip_diagnostics: true
+  min_length: 5000
 
 tree:
   tree-builder-args: "'-ninit 10 -n 4 -czb'"
