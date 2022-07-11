@@ -300,7 +300,7 @@ subsampling:
   african_country:
     # Use GISAID Africa data to sample the given country.
     focal:
-      max_sequences: 4000
+      max_sequences: 5000
       query: --query "(gisaid_africa == 'yes') & (country == '{country}')"
     # Use all contextual data from the nextregions input without any subsampling.
     context:
@@ -311,7 +311,7 @@ subsampling:
     # Sample each region evenly by country, year, and month.
     focal:
       group_by: country year month
-      max_sequences: 4000
+      max_sequences: 5000
       query: --query "(gisaid_africa == 'yes') & (country in [{countries}])"
     # Use all contextual data from the nextregions input without any subsampling.
     context:
