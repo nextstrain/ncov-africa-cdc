@@ -100,8 +100,8 @@ Run all builds on AWS Batch.
 nextstrain build \
   --aws-batch \
   --cpus 36 \
-  --memory 70Gib
-  .
+  --memory 70Gib \
+  . \
   --configfile builds_africa.yaml
 ```
 
