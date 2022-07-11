@@ -48,7 +48,7 @@ tar xzOf data/metadata_tsv.tar.xz metadata.tsv \
 xz -c -d data/metadata_africa.tsv.xz \
   | tsv-select -H -f 'Virus\ name','Collection\ date','Submission\ date' \
   | sed 1d \
-  | sed 's/\t/|/g' > data/strains_africa.txt
+  | awk -F "\t" '{ print $1"|"$2"|"$3 }' > data/strains_africa.txt
 
 # Get genomes for strain names from tarball.
 tar xzOf data/sequences_fasta.tar.xz sequences.fasta \
