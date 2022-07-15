@@ -42,7 +42,7 @@ builds:
   western-africa:
     title: SARS-CoV-2 analysis for Western Africa
     subsampling_scheme: african_region
-    countries: "'Benin', 'Burkina Faso', 'Cabo Verde', 'Côte d\\'Ivoire', 'Gambia', 'Ghana', 'Guinea', 'Guinea-Bissau', 'Liberia', 'Mali', 'Niger', 'Nigeria', 'Senegal', 'Sierra Leone', 'Togo'"
+    countries: "'Benin', 'Burkina Faso', 'Cabo Verde', 'Cote d\\'Ivoire', 'Gambia', 'Ghana', 'Guinea', 'Guinea-Bissau', 'Liberia', 'Mali', 'Niger', 'Nigeria', 'Senegal', 'Sierra Leone', 'Togo'"
 
   # Define country-specific builds.
   algeria:
@@ -97,9 +97,9 @@ builds:
     title: "SARS-CoV-2 analysis for Chad"
   cote-divoire:
     colors: africa_cdc_profile/colors/cote-divoire_colors.tsv
-    country: "C\xF4te d\\'Ivoire"
+    country: "Cote d\\'Ivoire"
     subsampling_scheme: african_country
-    title: "\"SARS-CoV-2 analysis for C\xF4te d\\'Ivoire\""
+    title: "SARS-CoV-2 analysis for C\xF4te d'Ivoire"
   democratic-republic-of-the-congo:
     colors: africa_cdc_profile/colors/democratic-republic-of-the-congo_colors.tsv
     country: Democratic Republic of the Congo
