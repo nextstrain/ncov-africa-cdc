@@ -38,7 +38,7 @@ Extract African metadata and sequences from full GISAID downloads.
 
 ```
 # Get metadata for Africa directly from tarball.
-tar xzOf data/metadata_tsv.tar.xz metadata.tsv \
+tar xOf data/metadata_tsv.tar.xz metadata.tsv \
   | tsv-filter -H --str-in-fld Location:Africa \
   | xz -c -2 > data/metadata_africa.tsv.xz
 
@@ -51,7 +51,7 @@ xz -c -d data/metadata_africa.tsv.xz \
   | awk -F "\t" '{ print $1"|"$2"|"$3 }' > data/strains_africa.txt
 
 # Get genomes for strain names from tarball.
-tar xzOf data/sequences_fasta.tar.xz sequences.fasta \
+tar xOf data/sequences_fasta.tar.xz sequences.fasta \
   | faSomeRecords /dev/stdin data/strains_africa.txt /dev/stdout \
   | xz -c -2 > data/sequences_africa.fasta.xz
 ```
