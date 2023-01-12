@@ -1,11 +1,11 @@
 # Define inputs.
 inputs:
   - name: nextregions_africa
-    metadata: "data/hcov_africa.tar.gz"
-    aligned: "data/hcov_africa.tar.gz"
+    metadata: "https://data.nextstrain.org/files/ncov/open/reference/metadata.tsv.xz"
+    aligned: "https://data.nextstrain.org/files/ncov/open/reference/aligned.fasta.xz"
   - name: gisaid_africa
-    metadata: "data/metadata_africa.tsv.xz"
-    aligned: "data/sequences_africa.fasta.xz"
+    metadata: "gisaid_metadata.tsv.zst"
+    aligned: "gisaid_sequences.fasta.zst"
 
 auspice_json_prefix: staging_ncov
 
