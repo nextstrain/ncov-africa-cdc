@@ -104,4 +104,35 @@ nextstrain build \
 
 ### Run builds on Terra
 
+1. **Terra** is a platform for biomedical research. To learn more and register an account, please follow the [Getting Started Guide](https://terra.bio/resources/getting-started/). 
+
+2. To run builds on Terra, you need to upload the build config and profiles directory. To do this, download this repository and zip the profile folder.
+
+  ```
+  git clone git clone https://github.com/nextstrain/ncov-africa-cdc.git
+  cd ncov-africa-cdc
+  zip -r africa-cdc-profile.zip africa-cdc-profile
+  
+  # Upload these files to Terra
+  ls -l africa-cdc-profile.zip
+  ls -l builds_africa.yaml
+  ```
+
+  Then, upload the files to Terra using the [Data Uploader](https://support.terra.bio/hc/en-us/articles/4419428208411-Data-Uploader).
+
+3. Terra allows you to run parallel jobs from a **Table**. A template TSV file is provided in this repository which can be used to create a Terra table by following [these instructions](https://support.terra.bio/hc/en-us/articles/360059242671).
+
+  ```
+  # TSV for creating a table in Terra
+  ls -ltr builds.tsv
+  ```
+
+4. [**Dockstore**](https://dockstore.org/about) is a platform for sharing reusable and scalable analytical tools and workflows. To import the `ncov` and `gisaid_ingest` workflows from Dockstore, select "Terra" under "Launch with":
+
+  * [Dockstore: nextstrain/ncov/gisaid_ingest](https://dockstore.org/workflows/github.com/nextstrain/ncov/gisaid_ingest:master?tab=info)
+  * [Dockstore: nextstrain/ncov/ncov](https://dockstore.org/workflows/github.com/nextstrain/ncov/ncov:master?tab=info)
+
+5. To learn more about running any workflow in Terra, please visit [Terra's Getting started running workflows](https://support.terra.bio/hc/en-us/articles/360036379771-Get-started-running-workflows).
+
+
 TBD.
