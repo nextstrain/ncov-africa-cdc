@@ -7,6 +7,8 @@ inputs:
     metadata: "data/metadata_africa.tsv.xz"
     aligned: "data/sequences_africa.fasta.xz"
 
+auspice_json_prefix: staging_ncov
+
 files:
   auspice_config: "africa_cdc_profile/auspice_config_africa.json"
   description: "africa_cdc_profile/description_africa.md"
