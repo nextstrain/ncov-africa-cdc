@@ -45,11 +45,6 @@ builds:
     title: SARS-CoV-2 analysis for Western Africa
     subsampling_scheme: african_region
     countries: "'Benin', 'Burkina Faso', 'Cabo Verde', 'Cote d\\'Ivoire', 'Gambia', 'Ghana', 'Guinea', 'Guinea-Bissau', 'Liberia', 'Mali', 'Niger', 'Nigeria', 'Senegal', 'Sierra Leone', 'Togo'"
-  # Define institutional builds
-  CAMES:
-    title: SARS-CoV-2 analysis for CAMES countries
-    subsampling_scheme: african_institution
-    countries: "'Benin', 'Burkina Faso', 'Burundi', 'Cameroon', 'Central African Republic', 'Republic of the Congo', 'Cote d\\'Ivoire', 'Gabon', 'Guinea', 'Guinea-Bissau', 'Equatorial Guinea', 'Madagascar', 'Mali', 'Niger', 'Democratic Republic of the Congo', 'Rwanda', 'Chad', 'Senegal', 'Togo'" 
   # Define country-specific builds.
   algeria:
     colors: africa_cdc_profile/colors/algeria_colors.tsv
@@ -316,17 +311,6 @@ subsampling:
 
   african_region:
     # Sample each region evenly by country, year, and month.
-    focal:
-      group_by: country year month
-      max_sequences: 5000
-      query: --query "(gisaid_africa == 'yes') & (country in [{countries}])"
-    # Use all contextual data from the nextregions input without any subsampling.
-    context:
-      max_sequences: 1000
-      query: --query "(nextregions_africa == 'yes') & (country not in [{countries}])"
-
-  african_institution:
-    # Sample each institution evenly by country, year, and month.
     focal:
       group_by: country year month
       max_sequences: 5000
