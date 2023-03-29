@@ -25,13 +25,10 @@ Select the “metadata” button from that same “Download packages” section 
 
 ### Filter data
 
-From an existing `nextstrain` conda environment, install extra tools to extract data from GISAID files.
+Navigate to the `ncov` workflow directory and enter a Nextstrain runtime shell there.
 
 ```
-# Install tsvutils and UCSC command to extract sequences.
-# You only need to do this once.
-conda activate nextstrain
-conda install -c conda-forge -c bioconda tsv-utils ucsc-fasomerecords
+nextstrain shell .
 ```
 
 Extract African metadata and sequences from full GISAID downloads.
@@ -52,7 +49,7 @@ xz -c -d data/metadata_africa.tsv.xz \
 
 # Get genomes for strain names from tarball.
 tar xOf data/sequences_fasta.tar.xz sequences.fasta \
-  | faSomeRecords /dev/stdin data/strains_africa.txt /dev/stdout \
+  | seqkit grep --by-name -f data/strains_africa.txt \
   | xz -c -2 > data/sequences_africa.fasta.xz
 ```
 
